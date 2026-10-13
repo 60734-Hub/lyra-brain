@@ -1,0 +1,116 @@
+# Lyra skills library - full inventory (98 skills, packed to laptop oct 13)
+
+## Windows host ops
+- **add-local-onnx-brain-failover-windows** - "Give a cloud-brain Python desktop app a local failover brain on Windows using onnxruntime-genai + a Phi-4 ONNX model: download the model files, wire a local_br
+- **build-android-apk-no-gradle** - "Build, sign, verify and hand off a real Android APK on a Mac that has no Android Studio and no Gradle, by piping the raw SDK tools (aapt2, javac, d8, zipalign,
+- **deliver-verified-files-to-windows-host** - "Get text files, whole app sources, or a large binary bundle onto a remote Windows PC and prove they arrived byte-for-byte: host_file_write for text, a temp-fil
+- **diagnose-unrecognized-usb-device-windows** - "Work out why a Windows machine will not recognize a plugged-in USB device (camera, glasses, drive, peripheral) and decide whether it is a driver problem or a p
+- **download-verify-github-release-windows** - "Fetch a specific asset from a GitHub release on a Windows host, verify its SHA256 against the project's published SHA256SUMS file, and unpack it. Use when inst
+- **find-pi-on-lan-and-bus-windows** - "Decide whether a single-board computer (Pi 4/5, TinkerBoard) is actually up when the user says \"she's online\" or orders a re-check: parallel ping sweep of th
+- **flash-raspberry-pi-os-image-raw-windows** - "Write a downloaded Raspberry Pi OS image onto a physical SD card from a Windows host by raw-writing \\\\.\\PhysicalDriveN when the Windows volume layer blocks 
+- **flash-rockchip-board-maskrom-windows** - "Flash a Rockchip board (Tinker Board / RK3288, RK3328, RK3399 family) that has no usable SD-card path, by putting it into maskrom mode and writing its internal
+- **get-admin-rights-windows-scheduled-task** - "Turn a non-elevated agent shell on a Windows host into standing administrator access: detect the UAC split token, register a highest-privileges scheduled task 
+- **install-wch-ch34x-usb-serial-driver-windows** - "Make a WCH USB-serial device (CH340/CH341/CH342/CH343/CH910x - VID_1A86) produce a COM port on Windows when it enumerates fine but no port is created: get the 
+- **read-and-archive-optical-disc-windows** - "Enumerate an external CD/DVD drive on a Windows host, confirm media is loaded, inventory the whole disc, copy its full contents to a local archive, build the t
+- **strip-credentials-from-pi-sd-bootfs-windows** - "Remove the login user, password hash and Wi-Fi credentials from a Raspberry Pi OS SD card's FAT32 bootfs partition by editing the cloud-init files on Windows: 
+- **windows-automation** - Automate native Windows apps and system interactions with PowerShell, documented COM APIs, and Microsoft UI Automation through the Windows host executor. Use fo
+- **write-whole-disk-image-to-sd-card-raw-windows** - "Write a full-disk image such as NVIDIA JetPack's sd-blob.img onto a microSD card OR a USB SSD from Windows when the volume layer blocks the write: re-verify th
+- **inject-first-boot-autosetup-into-linux-rootfs-wsl** - "Turn a freshly flashed Linux boot disk (Jetson/JetPack USB SSD, Pi, any ext4 image) into a zero-step deliverable: attach the disk into WSL2 with usbipd (Window
+- **boot-pi-image-in-qemu-verify-ssh-windows** - "Stand up a virtual Raspberry Pi on a Windows host from a flashed Pi OS .img when the physical board is unreachable: install QEMU, extract or download a matchin
+
+## Boards / hardware bring-up
+- **adb-bulk-uninstall-keep-list-phone** - "Remove every third-party app on an adb-connected Android phone except an explicit keep list (purchased/pro apps, medical calculators, core Google/Samsung, the 
+- **android-phone-ui-automation-adb** - "Complete a mobile web signup/login in the phone's own Chrome by driving the S25 over adb from the Windows host: screencap to a PNG and read it to see the scree
+- **build-flash-lilygo-twatch-firmware-windows** - "Take a LILYGO ESP32 board (T-Watch / TTGO TWatch, or Lily Pi K113) from stock demo to custom firmware on a Windows host: archive the irreplaceable low flash ra
+- **flash-openhasp-firmware-and-push-design-windows** - "Take an openHASP-supported ESP32 touch display (LILYGO Lily Pi K113, Lanbon, Sunton, WT32-SC01, etc.) from a dead or boot-looping vendor image to a working ope
+- **identify-unknown-serial-board-and-capture-host-camera** - "Identify an unknown USB-serial board attached to a Windows host, read the firmware off it (esptool for ESP, avrdude -c wiring for AVR boards), write a new sket
+- **thermal-3d-reconstruction-from-palette-captures** - "Turn palette-rendered thermal camera captures (e.g. HT-102, 32x32 IR exported as PNG) into an interactive 3D subsurface view: hand-written PNG decoder, palette
+- **draw-deliver-hardware-port-scheme-pil** - "Draw a labeled hardware port-scheme image of a laptop or device (numbered P-badges, leader lines, notes panel) with Python PIL on Windows and deliver it to the
+
+## Cloudflare / web deploy
+- **cloudflare** - Discover and choose Cloudflare products for apps, APIs, AI agents, storage, networking, and security. Use for architecture and product selection, including when
+- **cloudflare-add-zone-and-bind-worker-domain** - "Take a freshly registered domain live on Cloudflare end to end when the API token lacks zone-create: add the zone through the dashboard UI over CDP, pick Free,
+- **cloudflare-worker-deploy-mcp-sandbox** - "Deploy or update a Cloudflare Worker via the Cloudflare MCP execute tool: ship the source as hash-verified base64 pieces through KV, PUT multipart with the mod
+- **cloudflare-worker-edit-live-script-mcp** - "Patch an already-deployed Cloudflare Worker by GETting its script multipart, doing surgical string surgery, and PUTting it back with the exact existing binding
+- **deploy-fullstack-vercel** - Build and deploy a full-stack app (React frontend + Python/FastAPI backend) or a Vellum app to Vercel as a serverless demo with seeded data
+- **vercel-token-setup** - Set up a Vercel API token for publishing apps using browser automation
+- **rotate-leaked-secret-via-kv-seed-route** - "Rotate a leaked credential, premium code set, or config value and push it into a Cloudflare Worker's KV store from the sandbox without ever printing the new va
+- **worker-account-auth-gate** - "Build a working account system inside a Cloudflare Worker with no external auth provider: signup/login/logout/me/changepassword endpoints, PBKDF2-SHA256 passwo
+- **site-analytics** - 
+- **pwa-install-layer-for-live-site** - "Turn an already-deployed website into an installable app by patching the live Cloudflare Worker with a manifest route, icon routes, and a head-tag injector, so
+- **frontend-design** - Design-quality layer for frontend code — typography, color, motion, spatial composition, and avoiding generic "AI slop" aesthetics. Use this as a companion when
+- **dependency-free-browser-simulator-build** - "Build a single self-contained browser simulator/calculator with its own hand-written JavaScript numeric engine (FFT, optics, geometry) and no libraries: split 
+- **threejs-webgl-anatomy-simulator-build** - "Build an app-store-grade rotatable 3D simulator (anatomy, orbit, product) as a self-hosted three.js ES-module page: numbered part files concatenated into one H
+- **web-app-pentest** - "Authorized web-application penetration testing: scope gate, recon, surface mapping, vulnerability scanning, targeted deep tests, and a findings report. Applies
+- **audit-rebrand-residuals-and-guard** - "After a site rebrand or product kill, find the dead brand strings that still reach crawlers from a worker-side SEO injector, KV-served legal pages, and the sch
+- **change-domain-nameservers-at-registrar** - "Switch a domain's authoritative nameservers from the registrar's web dashboard when the UI save button silently fails: log in on the user's own PC over CDP (hi
+
+## Craft / method
+- **brainstorming** - "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, require
+- **diagnosing-superpowers** - Use when a superpowers session went wrong and your human partner wants to know why — repeated work, ignored plans, stumbles, poor results, a skill that didn't f
+- **executing-plans** - Use when executing an implementation plan in the current session as the implementer yourself — your human partner chose inline execution, or no subagent tool is
+- **finishing-a-development-branch** - Use when implementation is complete, all tests pass, and you need to decide how to integrate the work
+- **receiving-code-review** - Use when receiving code review feedback, before implementing suggestions, especially if feedback seems unclear or technically questionable - requires technical 
+- **requesting-code-review** - Use when completing tasks, implementing major features, or before merging to verify work meets requirements
+- **subagent-driven-development** - Use when executing implementation plans with independent tasks in the current session
+- **dispatching-parallel-agents** - Use when facing 2+ independent tasks that can be worked on without shared state or sequential dependencies
+- **systematic-debugging** - Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes
+- **test-driven-development** - Use when implementing any feature or bugfix, before writing implementation code
+- **using-git-worktrees** - Use when starting feature work that needs isolation from current workspace or before executing implementation plans - ensures an isolated workspace exists via n
+- **using-superpowers** - Use when starting any conversation - establishes how to find and use skills, requiring skill invocation before ANY response including clarifying questions
+- **verification-before-completion** - Use when about to claim work is complete, fixed, or passing, before committing or creating PRs - requires running verification commands and confirming output be
+- **writing-plans** - Use when you have a spec or requirements for a multi-step task, before touching code
+- **writing-skills** - Use when creating new skills, editing existing skills, or verifying skills work before deployment
+- **headless-claude-code** - Reference guide for running Claude Code in third-party headless, container, and CI environments. Covers auth strategies, interactive mode pitfalls, tmux orchest
+- **build-artifact-while-blocked** - "When blocked on user access, verify live state then build and test a standalone artifact instead of sending a status note."
+- **api-mapping** - Record and analyze API surfaces of web services
+- **cli-discover** - Discover which CLI tools are installed, their versions, and authentication status
+- **llm-cost-optimizer** - "Analyze and reduce LLM spend: read usage breakdowns by call site, model, and inference profile, understand single-winner profile resolution, and pin call sites
+
+## Comms / accounts
+- **browser-login-via-chrome-devtools-protocol** - "When a site (Google/Gmail above all) rejects sign-in from the assistant's sandbox browser, launch a real Chrome on the user's own Windows machine with --remote
+- **chat-complex-documents** - Chat with and search your complex documents — ask questions, extract tables and fields, and get answers grounded in the source. Connects the hosted Unstructured
+- **chatgpt-import** - Import conversation history from ChatGPT into Vellum
+- **deepgram-voice** - Select and tune a Deepgram TTS voice - curated voice list, full Aura voice catalog via API key, and tuning parameters
+- **elevenlabs-voice** - Select and tune an ElevenLabs TTS voice - curated voice list, custom/cloned voices via API key, and tuning parameters
+- **email-setup** - Set up this assistant's own `[name].vellum.me` domain and email address (one-time setup)
+- **fish-audio** - "Generate expressive audio clips using Fish Audio S2 TTS with bracket emotion tags. Record voice memos, narration, audio messages, or any spoken content."
+- **linear-app-setup** - Create and configure a Linear agent app so the assistant can manage issues, projects, and workflows under its own identity
+- **mcp-setup** - Add, authenticate, list, and remove MCP (Model Context Protocol) servers — connect any external tool or service that publishes an MCP endpoint to the assistant
+- **notifications** - Send notifications through the unified notification router
+- **sentry-app-setup** - Create and configure a Sentry internal integration so the assistant can manage issues, alerts, and releases under its own identity
+- **twilio-setup** - Configure Twilio credentials and phone numbers for voice calls
+- **voice-setup** - Complete voice configuration in chat - desktop Talk and PTT shortcuts, microphone permissions, ElevenLabs/Deepgram TTS, and troubleshooting
+- **llm-provider-setup** - "Set up a new LLM provider connection, discover valid model ids, create and validate a model profile — securely and end-to-end via CLI. Covers managed vs BYO ke
+- **conversation-launcher** - Offer the user several spin-off conversations as clickable buttons on a single persistent card. Each click spawns a fresh seeded conversation in the sidebar; th
+- **daily-briefing** - Proactive daily briefing that fires on a recurring schedule, pulls recent memory and workspace context, composes a structured summary (action items, progress, r
+- **geo-audit** - Runs a one-command technical GEO audit on any domain. Checks AI crawler access, llms.txt presence, server-side rendering, sitemap, and schema markup. Streams re
+- **audit-third-party-app-source** - "Statically audit a third-party app source package (iOS/Swift, or any language dump someone handed over) before trusting, building, or installing it: read every
+- **plugin-builder** - "Use when the user wants to build, scaffold, ship, or edit a Vellum plugin that bundles multiple surfaces (hooks, tools, skills, and more) into one installable 
+
+## Mac / iMac
+- **audit-macos-app-permissions** - "Determine which macOS privacy permissions (Accessibility, Screen Recording, Full Disk Access, Camera, Automation) a specific app already holds by reading the s
+- **deliver-vault-secret-to-mac-keychain** - "Move an API key or password from the assistant credentials vault onto the user's Mac, install it into the login keychain for a specific app, and clear the Secu
+- **drive-live-macos-app-gui-for-demo** - "Drive a running macOS app's own window through the accessibility tree (System Events) while the owner watches: enumerate elements, set the focused text field, 
+- **install-mac-app-verified** - "Verify a downloaded macOS installer (checksum, signature, official source) and install it on the user's Mac without asking them to do it."
+- **macos-automation** - Automate native macOS apps and system interactions via osascript (AppleScript)
+- **repair-local-mac-swift-app** - "Diagnose, fix, extend, or add source files to a macOS app that lives as a Swift project on the user's machine, run its check scripts, rebuild the release bundl
+
+## Vellum / secrets
+- **assistant-migration** - Migrate from ChatGPT, Claude, OpenClaw, Hermes, Manus, and other AI assistants into Vellum by inspecting their data exports, conversation archives, files, promp
+- **guardian-verify-setup** - Set up channel verification for phone, Telegram, Slack, Discord, or email channels via outbound verification flow
+- **install-catalog-skill** - "Install a bundled, community, or plugin skill from the assistant catalog into /workspace/skills. Use when a task needs a capability that is not yet installed a
+- **remove-vellum-nudge-banner** - "Permanently remove Vellum's own in-app nudge banners (\"Join our community!\" / Join Discord, GitHub star prompt) by setting the dismissed flags in the app's o
+- **revive-wedged-remote-llm-service** - "Diagnose a local model server (Ollama) that accepts requests but never answers on a remote host, prove it with the zero-CPU signature, kill the orphaned llama-
+- **vellum-browser-use** - Browse the web using `assistant browser` CLI commands
+- **vellum-conversation-management** - Manage conversation threads (rename, list, search, export)
+- **vellum-github-app-setup** - Create and configure a GitHub App so the assistant can push commits, open PRs, and comment under its own bot identity. Use when the user wants the assistant to 
+- **vellum-memory-v2-migration** - Perform a one-time migration from memory v1, to memory v2, which was introduced in 0.8.0.
+- **vellum-oauth-integrations** - Act on behalf of your user in any third-party software that supports OAuth 2.0
+- **vellum-self-knowledge** - Answer questions about Vellum, its config, billing, and hosting from live sources of truth
+- **store-secret-via-secure-prompt** - "Get a password or API key from the user into the encrypted vault when they are on a call and cannot type it, since chat values are redacted and agent-shell set
+
+## Uncategorised
+- **.install-staging** - 
+- **audit-pi-os-image-bootfs-offline-windows** - "Verify a downloaded Raspberry Pi OS .img without mounting it or touching the card: raw-parse the MBR and FAT32 boot sector in python, walk the root directory a
+- **typescript-eval** - Test TypeScript code snippets before persisting as skills
